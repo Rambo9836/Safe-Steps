@@ -13,11 +13,12 @@ import {
   Vibration,
   AccessibilityInfo,
   ScrollView,
+  Image
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
-import { BlurView } from 'expo-blur';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+const NewLogo = require('../assets/images/logo.png');
 
 const { width, height } = Dimensions.get('window');
 
@@ -28,9 +29,8 @@ export default function HomeScreen() {
   const [vibrationEnabled, setVibrationEnabled] = useState(true);
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [vibrationIntensity, setVibrationIntensity] = useState('medium');
-  const [distance, setDistance] = useState(null);
+  const [distance, setDistance] = useState<number | null>(null);
   
-  const pulseAnim = useRef(new Animated.Value(1)).current;
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const alertAnim = useRef(new Animated.Value(1)).current;
   const connectionPulse = useRef(new Animated.Value(1)).current;
@@ -93,7 +93,7 @@ export default function HomeScreen() {
       alertAnim.setValue(1);
       Vibration.cancel();
     }
-  }, [obstacleDetected, vibrationEnabled, vibrationIntensity]);
+  }, [obstacleDetected, vibrationEnabled, vibrationIntensity, isConnected]);
 
   // Simulate obstacle detection
   useEffect(() => {
@@ -115,12 +115,8 @@ export default function HomeScreen() {
   };
 
   const getVibrationIcon = () => {
-    switch(vibrationIntensity) {
-      case 'low': return 'vibration';
-      case 'medium': return 'vibrate';
-      case 'high': return 'vibrate';
-      default: return 'vibrate';
-    }
+    // Only use valid MaterialCommunityIcons names
+    return 'vibrate';
   };
 
   return (
@@ -143,14 +139,9 @@ export default function HomeScreen() {
           >
             <View style={styles.logoContainer}>
               <View style={styles.logoWrapper}>
-                <MaterialCommunityIcons
-                  name="foot-print"
-                  size={40}
-                  color="#4fbdba"
-                  style={{ transform: [{ scaleX: -1 }] }}
-                />
+                <Image source={NewLogo} style={styles.logoImage} />
               </View>
-              <Text style={styles.appTitle}>Smart Obstacle Belt</Text>
+              <Text style={styles.appTitle}>Safe Step</Text>
               <Text style={styles.subtitle}>Your Walking Companion</Text>
             </View>
           </Animated.View>
@@ -321,7 +312,7 @@ export default function HomeScreen() {
                       styles.intensityButton,
                       vibrationIntensity === level && styles.intensityButtonActive
                     ]}
-                    onPress={() => setVibrationIntensity(level)}
+                    onPress={() => setVibrationIntensity(level as 'low' | 'medium' | 'high')}
                     accessible={true}
                     accessibilityLabel={`Set vibration to ${level}`}
                     accessibilityRole="button"
@@ -356,8 +347,9 @@ export default function HomeScreen() {
               </LinearGradient>
             </TouchableOpacity>
 
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.actionButton}
+              onPress={() => router.push('/help')}
               accessible={true}
               accessibilityLabel="Open help and support"
               accessibilityRole="button"
@@ -406,6 +398,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#4fbdba',
     marginBottom: 15,
+  },
+  logoImage: {
+    width: 150,
+    height: 150,
+    resizeMode: 'contain',
   },
   appTitle: {
     fontSize: 28,
