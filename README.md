@@ -38,7 +38,10 @@ Safe Steps is a mobile application meant to support visually impaired users by w
 ```md
 ![Home Screen](./assets/screenshots/home.png)  
 ![Settings Screen](./assets/screenshots/settings.png)  
-![Alert Screen](./assets/screenshots/alert.png)  
+![Alert Screen](./assets/screenshots/alert.png)
+## 🚀 App Demonstration
+
+![Safe Step App Demo](assets/images/SafeStepsapp-ezgif.com-video-to-gif-converter.gif) 
 ````
 
 
