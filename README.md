@@ -31,18 +31,7 @@ Safe Steps is a mobile application meant to support visually impaired users by w
 - **Accessible UI** — Clean, simple, and intuitive interface for ease of use  
 - **Help & Support Section** — FAQs, guidance, and contact info included in-app  
 
----
-
-## 📷 Demo / Screenshots
-
-```md
-![Home Screen](./assets/screenshots/home.png)  
-![Settings Screen](./assets/screenshots/settings.png)  
-![Alert Screen](./assets/screenshots/alert.png)
-
 ````
-
-
 ---
 
 ## 🛠️ Tech Stack
