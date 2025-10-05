@@ -35,16 +35,12 @@ Safe Steps is a mobile application meant to support visually impaired users by w
 
 ## 📷 Demo / Screenshots
 
-> _Insert screenshots or mockups from your Canva presentation here._  
-> Example markdown you can use:
-
 ```md
 ![Home Screen](./assets/screenshots/home.png)  
 ![Settings Screen](./assets/screenshots/settings.png)  
 ![Alert Screen](./assets/screenshots/alert.png)  
 ````
 
-If you have flow diagrams or system architecture visuals, feel free to embed them too.
 
 ---
 
@@ -140,6 +136,3 @@ Email: [pritam.pramanik@stud.th-deg.de](mailto:pritam.pramanik@stud.th-deg.de)
 Project repository:
 [https://github.com/Rambo9836/Safe-Steps](https://github.com/Rambo9836/Safe-Steps)
 
----
-
-*I encourage you to paste diagrams, flowcharts, or visuals from your Canva slides into the **Demo / Screenshots** section. Let me know if you want me to generate a ready-to-go `README.md` file for download or tweak any section!*
