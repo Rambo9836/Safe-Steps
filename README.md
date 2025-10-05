@@ -39,9 +39,7 @@ Safe Steps is a mobile application meant to support visually impaired users by w
 ![Home Screen](./assets/screenshots/home.png)  
 ![Settings Screen](./assets/screenshots/settings.png)  
 ![Alert Screen](./assets/screenshots/alert.png)
-## 🚀 App Demonstration
 
-![Safe Step App Demo](assets/images/SafeStepsapp-ezgif.com-video-to-gif-converter.gif) 
 ````
 
 
@@ -56,6 +54,9 @@ Safe Steps is a mobile application meant to support visually impaired users by w
 * **Project Setup / Tools:** VS Code, ESLint / Prettier, etc.
 
 ---
+## 🚀 App Demonstration
+
+![Safe Step App Demo](assets/images/SafeStepsapp-ezgif.com-video-to-gif-converter.gif) 
 
 ## 🚀 Getting Started
 
